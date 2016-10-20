@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加图书</title>
+</head>
+<body>
+    <form method="POST">{% csrf_token %}
+        <div>
+            {% if book in book_list %}
+                {{ state }}
+                {{ book_list.ISBN }} | {{ book_list.Title }} | {{ book_list.Publisher }} | {{ book_list.PublishDate }} | {{ book_list.Price }}
+            {% endif %}
+        </div>
+        ISBN:<br>
+        <input type="text" name="ISBN">
+        <br>
+        Title:<br>
+        <input type="text" name="Title">
+        <br>
+        Publisher:<br>
+        <input type="text" name="Publisher">
+        <br>
+        PublishDate:<br>
+        <input type="date" name="PublishDate">
+        <br>
+        Price:<br>
+        <input type="text" name="Price">
+        <br>
+        <input type="submit" value="tijiao">
+
+    </form>
+</body>
+</html>
